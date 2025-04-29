@@ -42,14 +42,14 @@
               >Projects</a
             >
           </li>
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
               >Contact</a
             >
           </li>
-          <li class="nav__link click">
+          <li class="nav__link click" onclick="toggleContrast()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -61,14 +61,16 @@
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hey</h1>
-          <h1 class="title purple">I'm Noah!</h1>
+          <h1 class="title">
+            <b class="purple">I'm Noah!</b>
+          </h1>
           <p class="header__para">
             I'm a student at <b class="purple">FES Institute</b>, and I have
             been learning to code for about a month now. My goal is to land an
             $80k + software engineer job by the
             <b class="purple">end of 2025.</b>
             <br />
-            Here's a bit more <b class="purple">about me</b>
+            Here's a bit more <b class="purple click" onclick="toggleModal()">about me</b>
           </p>
           <div class="social__link--list">
             <a
@@ -95,7 +97,7 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-regular fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -152,6 +154,7 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 class="modal__title modal__title--contact">Let's have a chat</h3>
           <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities</h4>
           <form id="contact__form" onsubmit="contact(event)">
@@ -178,7 +181,6 @@
             Thanks for the message! Looking forward to speaking with you soon.
           </div>
         </div>
-        <i class="fas fa-times modal__exit click"></i>
       </div>
     </section>
 
