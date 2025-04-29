@@ -1,14 +1,28 @@
-// template_ujadqti
-// service_tgdn6n9
-// MHJ3dcy-OK4NGMiSR
+function contact(event) {
+  event.preventDefault();
+  const loading = document.querySelector(".modal__overlay--loading");
+  const success = document.querySelector(".modal__overlay--success");
+  loading.classList += " modal__overlay--visible";
 
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "MHJ3dcy-OK4NGMiSR",
-      });
-   })();
-</script>
+  emailjs
+    .sendForm(
+      "service_tgdn6n9",
+      "template_ujadqti",
+      event.target,
+      "MHJ3dcy-OK4NGMiSR"
+    )
+    .then(() => {
+      loading.classList.remove("modal__overlay--visible");
+      success.classList += " modal__overlay--visible";
+    })
+    .catch(() => {
+      loading.classList.remove("modal__overlay--visible");
+      alert(
+        "The email service is temorarily unavailable. Please contact me direectly at noahjames1035@gmail.com"
+      );
+    });
+}
+
+function toggleModal() {
+    // toggle modal
+}
